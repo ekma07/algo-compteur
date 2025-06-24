@@ -1,0 +1,28 @@
+var
+char: CHARACTER
+char_nbr, word_nbr, vowel_nbr: INTEGER
+space: BOOLEAN
+
+BEGIN
+char_nbr <- 0
+word_nbr <- 0
+vowel_nbr <- 0
+space <- TRUE
+
+READ char
+WHILE char ≠ '.'
+    char_nbr <- char_nbr + 1
+
+    IF char IS IN ("a", "e", "i","o", "u", "y",)
+    vowel_nbr <- vowel_nbr + 1
+    END IF
+
+IF char ≠ ' ' AND space = TRUE THEN
+word_nbr <- word_nbr + 1
+space <- FALSE
+ELSE IF char = ' ' THEN
+space <- TRUE
+END IF
+
+READ char
+END WHILE
